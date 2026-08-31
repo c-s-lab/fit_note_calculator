@@ -60,7 +60,33 @@
 	<h1 class="text-3xl font-semibold tracking-tight text-slate-900">Do I need a fit note?</h1>
 	<p class="mt-3 text-slate-600">
 		Answer two questions about your sickness absence to find out whether you should get a fit note,
-		based on current GOV.UK, NHS and Acas guidance.
+		based on current
+		<a
+			href="https://www.gov.uk/government/publications/the-fit-note-a-guide-for-patients-and-employees/the-fit-note-guidance-for-patients-and-employees"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-emerald-700 underline hover:text-emerald-800"
+		>
+			GOV.UK
+		</a>,
+		<a
+			href="https://www.nhs.uk/nhs-services/gps/getting-a-fit-note/"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-emerald-700 underline hover:text-emerald-800"
+		>
+			NHS
+		</a>
+		and
+		<a
+			href="https://www.acas.org.uk/fit-notes-and-proof-of-sickness"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="text-emerald-700 underline hover:text-emerald-800"
+		>
+			Acas
+		</a>
+		guidance.
 	</p>
 
 	<form onsubmit={handleSubmit} class="mt-8 space-y-6" novalidate>
