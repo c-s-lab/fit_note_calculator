@@ -56,7 +56,7 @@
 	}
 </script>
 
-<main class="mx-auto max-w-xl bg-white px-5 py-12 sm:py-16 dark:bg-slate-900">
+<main class="mx-auto max-w-xl px-5 py-12 sm:py-16">
 	<h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
 		Do I need a fit note?
 	</h1>
