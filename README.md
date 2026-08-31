@@ -9,6 +9,10 @@ The rule it applies reflects current GOV.UK, NHS and Acas guidance:
 
 This is a static, frontend-only calculator. It doesn't store or send your data anywhere — the calculation happens entirely in your browser.
 
+## Demo
+
+https://github.com/user-attachments/assets/b6d7dfd1-3c23-4223-a155-b7cc8f5f0211
+
 ## Running locally
 
 ```bash
