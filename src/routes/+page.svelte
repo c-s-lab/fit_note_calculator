@@ -56,6 +56,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Do I need a Fit Note? (UK)</title>
+</svelte:head>
+
 <main class="mx-auto max-w-xl px-5 py-12 sm:py-16">
 	<h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
 		Do I need a fit note?
