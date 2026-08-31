@@ -56,16 +56,18 @@
 	}
 </script>
 
-<main class="mx-auto max-w-xl px-5 py-12 sm:py-16">
-	<h1 class="text-3xl font-semibold tracking-tight text-slate-900">Do I need a fit note?</h1>
-	<p class="mt-3 text-slate-600">
+<main class="mx-auto max-w-xl bg-white px-5 py-12 sm:py-16 dark:bg-slate-900">
+	<h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+		Do I need a fit note?
+	</h1>
+	<p class="mt-3 text-slate-600 dark:text-slate-400">
 		Answer two questions about your sickness absence to find out whether you should get a fit note,
 		based on current
 		<a
 			href="https://www.gov.uk/government/publications/the-fit-note-a-guide-for-patients-and-employees/the-fit-note-guidance-for-patients-and-employees"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-emerald-700 underline hover:text-emerald-800"
+			class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 		>
 			GOV.UK
 		</a>,
@@ -73,7 +75,7 @@
 			href="https://www.nhs.uk/nhs-services/gps/getting-a-fit-note/"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-emerald-700 underline hover:text-emerald-800"
+			class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 		>
 			NHS
 		</a>
@@ -82,7 +84,7 @@
 			href="https://www.acas.org.uk/fit-notes-and-proof-of-sickness"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="text-emerald-700 underline hover:text-emerald-800"
+			class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 		>
 			Acas
 		</a>
@@ -91,28 +93,28 @@
 
 	<form onsubmit={handleSubmit} class="mt-8 space-y-6" novalidate>
 		<div>
-			<label for="startDate" class="block text-sm font-medium text-slate-900">
+			<label for="startDate" class="block text-sm font-medium text-slate-900 dark:text-slate-100">
 				What was the first day you were unable to work because you were ill?
 			</label>
 			<input
 				id="startDate"
 				type="date"
 				bind:value={startDate}
-				class="mt-2 block w-full max-w-xs rounded-md border-slate-300 shadow-sm focus:border-emerald-600 focus:ring-emerald-600 sm:text-sm"
+				class="mt-2 block w-full max-w-xs rounded-md border-slate-300 shadow-sm focus:border-emerald-600 focus:ring-emerald-600 sm:text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:scheme-dark"
 			/>
 		</div>
 
 		<div>
-			<label for="endDate" class="block text-sm font-medium text-slate-900">
+			<label for="endDate" class="block text-sm font-medium text-slate-900 dark:text-slate-100">
 				What was the last day you were unable to work because you were ill?
 			</label>
 			<input
 				id="endDate"
 				type="date"
 				bind:value={endDate}
-				class="mt-2 block w-full max-w-xs rounded-md border-slate-300 shadow-sm focus:border-emerald-600 focus:ring-emerald-600 sm:text-sm"
+				class="mt-2 block w-full max-w-xs rounded-md border-slate-300 shadow-sm focus:border-emerald-600 focus:ring-emerald-600 sm:text-sm dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100 dark:scheme-dark"
 			/>
-			<p class="mt-2 text-sm text-slate-500">
+			<p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
 				This is the last day you were ill, not the day you returned to work.
 			</p>
 		</div>
@@ -120,7 +122,7 @@
 		<div class="flex items-center gap-3 pt-2">
 			<button
 				type="submit"
-				class="rounded-md border-2 border-emerald-700 bg-emerald-700 px-5 py-2 text-sm font-semibold text-white hover:border-emerald-800 hover:bg-emerald-800"
+				class="rounded-md border-2 border-emerald-700 bg-emerald-700 px-5 py-2 text-sm font-semibold text-white hover:border-emerald-800 hover:bg-emerald-800 dark:border-emerald-600 dark:bg-emerald-600 dark:hover:border-emerald-500 dark:hover:bg-emerald-500"
 			>
 				Check
 			</button>
@@ -128,7 +130,7 @@
 				<button
 					type="button"
 					onclick={reset}
-					class="rounded-md border-2 border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 hover:border-slate-400"
+					class="rounded-md border-2 border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 hover:border-slate-400 dark:border-slate-600 dark:text-slate-300 dark:hover:border-slate-500"
 				>
 					Start again
 				</button>
@@ -137,55 +139,64 @@
 	</form>
 
 	{#if validationError}
-		<div class="mt-8 rounded-md border-l-4 border-red-600 bg-red-50 px-5 py-4" role="alert">
-			<p class="font-medium text-red-700">{validationError}</p>
+		<div
+			class="mt-8 rounded-md border-l-4 border-red-600 bg-red-50 px-5 py-4 dark:border-red-500 dark:bg-red-950"
+			role="alert"
+		>
+			<p class="font-medium text-red-700 dark:text-red-400">{validationError}</p>
 		</div>
 	{:else if result}
 		{#if result.status === 'NO_FIT_NOTE'}
-			<div class="mt-8 rounded-md border-l-4 border-emerald-700 bg-emerald-50 px-5 py-5">
-				<h2 class="text-lg font-semibold text-slate-900">
+			<div
+				class="mt-8 rounded-md border-l-4 border-emerald-700 bg-emerald-50 px-5 py-5 dark:border-emerald-500 dark:bg-emerald-950"
+			>
+				<h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
 					You do not need a fit note based on the length of your sickness absence
 				</h2>
-				<p class="mt-2 text-slate-700">
+				<p class="mt-2 text-slate-700 dark:text-slate-300">
 					Your sickness absence lasted
 					<strong>{result.days} calendar day{result.days === 1 ? '' : 's'}</strong>.
 				</p>
-				<p class="mt-2 text-slate-700">
+				<p class="mt-2 text-slate-700 dark:text-slate-300">
 					If you are off sick for 7 calendar days or fewer, you can normally self-certify your
 					sickness.
 				</p>
-				<p class="mt-3 text-sm text-slate-600">
+				<p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
 					Calendar days include weekends, bank holidays and days you do not normally work.
 				</p>
 			</div>
 		{:else}
-			<div class="mt-8 rounded-md border-l-4 border-red-600 bg-red-50 px-5 py-5">
-				<h2 class="text-lg font-semibold text-slate-900">You should get a fit note</h2>
-				<p class="mt-2 text-slate-700">
+			<div
+				class="mt-8 rounded-md border-l-4 border-red-600 bg-red-50 px-5 py-5 dark:border-red-500 dark:bg-red-950"
+			>
+				<h2 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
+					You should get a fit note
+				</h2>
+				<p class="mt-2 text-slate-700 dark:text-slate-300">
 					Your sickness absence lasted <strong>{result.days} calendar days</strong>, which is more
 					than 7 calendar days.
 				</p>
-				<p class="mt-2 text-slate-700">
+				<p class="mt-2 text-slate-700 dark:text-slate-300">
 					Based on the 7-calendar-day rule, you should ask a healthcare professional for a fit note.
 				</p>
 			</div>
 		{/if}
 
-		<p class="mt-6 text-sm text-slate-500">
+		<p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
 			This calculator provides general information based on current GOV.UK, NHS and Acas guidance.
 			It does not take account of your employer's individual sickness policy or every possible
 			employment situation. Check with your employer if you are unsure.
 		</p>
 
-		<div class="mt-6 border-t border-slate-200 pt-6">
-			<h3 class="text-sm font-medium text-slate-900">Sources</h3>
-			<ul class="mt-2 space-y-1 text-sm text-slate-600">
+		<div class="mt-6 border-t border-slate-200 pt-6 dark:border-slate-700">
+			<h3 class="text-sm font-medium text-slate-900 dark:text-slate-100">Sources</h3>
+			<ul class="mt-2 space-y-1 text-sm text-slate-600 dark:text-slate-400">
 				<li>
 					<a
 						href="https://www.gov.uk/government/publications/the-fit-note-a-guide-for-patients-and-employees/the-fit-note-guidance-for-patients-and-employees"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-emerald-700 underline hover:text-emerald-800"
+						class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 					>
 						GOV.UK — The fit note: guidance for patients and employees
 					</a>
@@ -195,7 +206,7 @@
 						href="https://www.nhs.uk/nhs-services/gps/getting-a-fit-note/"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-emerald-700 underline hover:text-emerald-800"
+						class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 					>
 						NHS — Getting a fit note
 					</a>
@@ -205,7 +216,7 @@
 						href="https://www.acas.org.uk/fit-notes-and-proof-of-sickness"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="text-emerald-700 underline hover:text-emerald-800"
+						class="text-emerald-700 underline hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
 					>
 						Acas — Fit notes and proof of sickness
 					</a>
